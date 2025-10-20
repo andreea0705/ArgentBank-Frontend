@@ -1,0 +1,21 @@
+body {
+  margin: 0;
+  font-family: "Work Sans", "Assistant", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+:after,
+:before {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  font-family: "Assistant", sans-serif;
+  font-size: 1em;
+  font-style: normal;
+  text-decoration: none;
+  list-style-type: none;
+  scroll-behavior: smooth;
+}
