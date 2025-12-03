@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import IconChat from "../img/icon-chat.webp";
 import IconMoney from "../img/icon-money.webp";
 import IconSecurity from "../img/icon-security.webp";
-import BankTree from "../img/bank.webp";
+import BankTree from "../img/bank.png";
 import Arrow from "../img/svg/arrow.svg";
 import "../style/main.css";
 

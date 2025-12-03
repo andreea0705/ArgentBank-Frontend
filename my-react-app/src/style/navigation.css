@@ -8,7 +8,8 @@
   align-items: center;
   flex-direction: row;
   background-color: var(--light-green);
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  text-shadow: 10px 10px 10px rgba(0,0,0,0.4);
   margin-right: 0.5rem;
   padding: 7px;
   font-weight: 700;
@@ -18,12 +19,12 @@
 
 .main-nav-item:hover {
   background-color: var(--green);
-  color: rgb(255, 255, 255);
+  color:  rgba(38, 70, 83); 
   text-decoration: none;
 }
 .main-nav-item img {
   display: flex;
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   margin-right: 10px;
 }
