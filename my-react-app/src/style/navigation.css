@@ -2,28 +2,18 @@
   display: flex;
 }
 
+.fa-user-circle:before{
+    content: "\f2bd";
+}
+
+
 .main-nav-item {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  background-color: var(--light-green);
-  color: rgb(0, 0, 0);
-  margin-right: 0.5rem;
-  padding: 7px;
-  font-weight: 700;
-  border-radius: 10px;
-  text-decoration: none;
+  font-weight: bold;
+  color: #2c3e50;
 }
 
 .main-nav-item:hover {
   background-color: var(--green);
   color: rgb(255, 255, 255);
   text-decoration: none;
-}
-.main-nav-item img {
-  display: flex;
-  width: 20px;
-  height: 20px;
-  margin-right: 10px;
 }

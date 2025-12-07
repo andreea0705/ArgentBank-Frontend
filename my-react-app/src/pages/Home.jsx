@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import IconChat from "../img/icon-chat.webp";
 import IconMoney from "../img/icon-money.webp";
 import IconSecurity from "../img/icon-security.webp";
-import BankTree from "../img/bank.webp";
+import BankTree from "../img/bank-tree.webp";
 import Arrow from "../img/svg/arrow.svg";
 import "../style/main.css";
 
@@ -11,24 +11,11 @@ const  Home = () => {
 
   return (
     <>
-      <h1>Argent Bank - Home Page</h1>
       <div className="hero">
           <img className="banktree" src={BankTree} alt="lol" />
-          <p className="little-slogan">SAVE & MANAGE YOUR MONEY</p>
-          <h1 className="slogan">
-            Banking <br />
-            You Want <br />
-            To Use
-          </h1>
-          <Link to="/login">
-            <div className="login">
-              <p>JOIN 5M ARGENTBANK CLIENTS</p>
-              <img className="arrow" src={Arrow} alt="arrow" />
-            </div>
-          </Link>
+        
           <section className="hero-content">
-             <h2 className="sr-only">Promoted Content</h2>
-             <p className="subtitle">No fees.</p>
+             <p className="subtitle">No fees.</p> 
              <p className="subtitle">No minimum deposit.</p>
              <p className="subtitle">High interest rates.</p>
              <p className="text">Open a savings account with Argent Bank today!</p>
@@ -36,9 +23,6 @@ const  Home = () => {
       </div>
 
        <section className="features">
-          <div className="grey">
-            <h2 className="features-title">Features</h2>
-          </div>
           <div className="row">
             <div className="feature-item">
               <img src={IconChat} alt="Chat Icon" className="feature-icon" />

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "../style/main.css";
-
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setSignIn } from "../features/authSlice";
@@ -67,7 +66,7 @@ const Login = () => {
               <label htmlFor="username">Email</label>
               <input
                 type="email"
-                id="email"
+                id="username"
                 placeholder="Email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -84,23 +83,22 @@ const Login = () => {
               />
             </div>
             <div className="input-remember">
+              <label htmlFor="remember-me">Remember me</label>
               <input
                 type="checkbox"
                 id="remember-me"
                 checked={rememberMe}
                 onChange={(e) => setRememberMe(e.target.checked)}
               />
-
-              <label htmlFor="remember-me">Remember me</label>
             </div>
             <div className="input-show-password">
+              <label htmlFor="show-password">Show Password</label>
               <input
                 type="checkbox"
                 id="show-password"
                 checked={showPassword}
                 onChange={() => setShowPassword(!showPassword)}
               />
-              <label htmlFor="show-password">Show Password</label>
             </div>
 
             <button onClick={handleSubmit} className="sign-in-button">
