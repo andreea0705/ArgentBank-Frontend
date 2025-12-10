@@ -2,6 +2,11 @@
   display: flex;
 }
 
+.navigation img{
+  width: 20px;
+  margin-right: 5px;
+}
+
 .fa-user-circle:before{
     content: "\f2bd";
 }
@@ -10,6 +15,7 @@
 .main-nav-item {
   font-weight: bold;
   color: #2c3e50;
+  padding-top: 5px;
 }
 
 .main-nav-item:hover {

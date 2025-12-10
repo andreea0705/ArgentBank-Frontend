@@ -17,17 +17,21 @@ const Navigation = () => {
   };
 
   return (
-    <section className="navigation">
+   <section className="navigation">
+      {/* Image toujours visible */}
+      <img src={User} alt="User Icon" />
+
+      {/* Lien conditionnel */}
       {token && (
         <Link className="main-nav-item" to="/profile">
-          <img src={User} alt="Mon SVG" />
           {dataUser.userName}
         </Link>
       )}
+
       <Link
         className="main-nav-item"
         to={token ? "/" : "/login"}
-        onClick={handleLogout}
+        onClick={token ? handleLogout : undefined}
       >
         {token ? "Sign Out" : "Sign In"}
       </Link>
