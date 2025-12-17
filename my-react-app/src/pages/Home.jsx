@@ -12,7 +12,7 @@ const  Home = () => {
   return (
     <>
       <div className="hero">
-          <img className="banktree" src={BankTree} alt="lol" />
+          {/* <img className="banktree" src={BankTree} alt="lol" /> */}
         
           <section className="hero-content">
              <p className="subtitle">No fees.</p> 
