@@ -1,0 +1,21 @@
+.edit-button {
+  border-color: var(--light-green);
+  background-color: var(--light-green);
+  color: #fff;
+  font-weight: bold;
+  padding: 10px;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+.user {
+  margin-top: 15px;
+  font-size: 18px;
+  color: #fff;
+  margin-bottom: 2rem;
+}
+
+.edit-button:hover {
+  border-color: var(--green);
+  background-color: var(--green);
+}

@@ -1,46 +1,98 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import "../style/profile.css";
+import Account from "../components/account";
+import { useSelector, useDispatch } from "react-redux";
+import { setGetProfile } from "../features/profileSlice";
+//import ModalEditUsername from "../components/ModalEditUsername";
 
+const Profile = () => {
+  const dispatch = useDispatch();
+  const dataUser = useSelector((state) => state.profile);
+  const token = useSelector((state) => state.auth.token);
+  const [toggleEditUsername, setToggleEditUsername] = useState(false);
 
-const Profile =() => {
-    return (
-         <main classname="main bg-dark">
-      <div classname="header">
-        <h1>Welcome back<br />Tony Jarvis!</h1>
-        <button classname="edit-button">Edit Name</button>
-      </div>
-      <h2 classname="sr-only">Accounts</h2>
-      <section classname="account">
-        <div classname="account-content-wrapper">
-          <h3 classname="account-title">Argent Bank Checking (x8349)</h3>
-          <p classname="account-amount">$2,082.79</p>
-          <p classname="account-amount-description">Available Balance</p>
-        </div>
-        <div classname="account-content-wrapper cta">
-          <button classname="transaction-button">View transactions</button>
-        </div>
+  async function fetchData() {
+    try {
+      const data = await fetch("http://localhost:3001/api/v1/user/profile", {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${token}`,
+          accept: "application/json",
+        },
+        body: JSON.stringify({
+          status: 0,
+          message: "string",
+          body: {
+            id: "string",
+            email: "string",
+          },
+        }),
+      });
+
+      if (data.status === 200) {
+        const responseData = await data.json();
+        dispatch(setGetProfile({ data: responseData }));
+      } else if (data.status === 401) {
+        console.log(
+          "Erreur d'authentification : Identifiant ou Mot de passe incorrect"
+        );
+      } else {
+        console.log("Connexion Impossible : Erreur inconnue");
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
+  useEffect(() => {
+    fetchData();
+  });
+
+  const handleEditUsername = () => {
+    setToggleEditUsername(!toggleEditUsername);
+  };
+
+  return (
+    <>
+      <section className="profile">
+        <article className="user">
+          <h1>
+            Welcome back
+            <br />
+            {dataUser.firstName + " " + dataUser.lastName + " !"}
+          </h1>
+          <button onClick={handleEditUsername} className="edit-button">
+            {!toggleEditUsername ? "Edit " : "Close"}
+          </button>
+          {toggleEditUsername && (
+            <ModalEditUsername onSubmit={handleEditUsername} />
+          )}
+        </article>
+        <h2 className="account-title">Accounts</h2>
+        <Account
+          state={{
+            accountNumber: "Argent Bank Checking (x8349)",
+            balance: "$2,082.79",
+            status: "Available Balance",
+          }}
+        />
+        <Account
+          state={{
+            accountNumber: "Argent Bank Savings (x6712)",
+            balance: "$10,928.42",
+            status: "Available Balance",
+          }}
+        />
+        <Account
+          state={{
+            accountNumber: "Argent Bank Credit Card (x8349)",
+            balance: "$184.30",
+            status: "Current Balance",
+          }}
+        />
       </section>
-      <section classname="account">
-        <div classname="account-content-wrapper">
-          <h3 classname="account-title">Argent Bank Savings (x6712)</h3>
-          <p classname="account-amount">$10,928.42</p>
-          <p classname="account-amount-description">Available Balance</p>
-        </div>
-        <div classname="account-content-wrapper cta">
-          <button classname="transaction-button">View transactions</button>
-        </div>
-      </section>
-      <section classname="account">
-        <div classname="account-content-wrapper">
-          <h3 classname="account-title">Argent Bank Credit Card (x8349)</h3>
-          <p classname="account-amount">$184.30</p>
-          <p classname="account-amount-description">Current Balance</p>
-        </div>
-        <div classname="account-content-wrapper cta">
-          <button classname="transaction-button">View transactions</button>
-        </div>
-      </section>
-    </main>
-    )
-}
+    </>
+  );
+};
 
 export default Profile;
