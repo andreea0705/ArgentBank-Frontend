@@ -3,7 +3,7 @@ import "../style/profile.css";
 import Account from "../components/account";
 import { useSelector, useDispatch } from "react-redux";
 import { setGetProfile } from "../features/profileSlice";
-//import ModalEditUsername from "../components/ModalEditUsername";
+import ModalEditUsername from "../components/ModalEditUsername";
 
 const Profile = () => {
   const dispatch = useDispatch();
@@ -14,19 +14,12 @@ const Profile = () => {
   async function fetchData() {
     try {
       const data = await fetch("http://localhost:3001/api/v1/user/profile", {
-        method: "POST",
+        method: "GET",
         headers: {
           Authorization: `Bearer ${token}`,
           accept: "application/json",
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          status: 0,
-          message: "string",
-          body: {
-            id: "string",
-            email: "string",
-          },
-        }),
       });
 
       if (data.status === 200) {

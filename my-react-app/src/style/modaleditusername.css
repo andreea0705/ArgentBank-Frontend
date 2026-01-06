@@ -1,0 +1,76 @@
+.editName-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  box-sizing: border-box;
+  background-color: white;
+  width: 300px;
+  margin: 0 auto;
+  margin-top: 5px;
+  padding: 15px;
+  color: black;
+}
+
+.edit-save {
+  border-color: var(--light-green);
+  background-color: var(--light-green);
+  color: #fff;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.edit-save:hover {
+  border-color: var(--green);
+  background-color: var(--green);
+}
+
+.error-msg {
+  color: #ce2029;
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.edit-save-error {
+  background-color: #ce2029;
+  border-color: var(--light-green);
+  color: #fff;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.edit-save-error:hover {
+  background-color: #ce2029;
+  border-color: var(--light-green);
+  color: #fff;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/* .gray-input {
+  background-color: lightgray;
+  color: #333;
+} */
+
+.input-grey {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-bottom: 1rem;
+}
+.input-grey input {
+  padding: 5px;
+  font-size: 1.2rem;
+  border: 1px solid var(--black);
+  background-color: var(--grey);
+}
+
+.input-grey label {
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+}
