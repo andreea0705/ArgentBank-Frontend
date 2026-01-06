@@ -62,13 +62,12 @@ const Profile = () => {
             {dataUser.firstName + " " + dataUser.lastName + " !"}
           </h1>
           <button onClick={handleEditUsername} className="edit-button">
-            {!toggleEditUsername ? "Edit " : "Close"}
+            {!toggleEditUsername ? "Edit Name " : "Close"}
           </button>
           {toggleEditUsername && (
             <ModalEditUsername onSubmit={handleEditUsername} />
           )}
         </article>
-        <h2 className="account-title">Accounts</h2>
         <Account
           state={{
             accountNumber: "Argent Bank Checking (x8349)",

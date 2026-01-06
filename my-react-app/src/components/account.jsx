@@ -1,5 +1,5 @@
 import React from "react";
-//import "../style/account.css";
+import "../style/account.css";
 
 const account = ({ state }) => {
   return (

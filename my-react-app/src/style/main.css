@@ -196,9 +196,9 @@ body {
 }
 
 .edit-button {
-  border-color: var(--light-green);
-  background-color: var(--light-green);
-  color: var(--white);
+  border-color: lightgreen;
+  background-color: lightgreen;
+  color: white;
   font-weight: bold;
   padding: 10px;
 }
