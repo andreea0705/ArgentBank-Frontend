@@ -11,7 +11,7 @@ export const profileSlice = createSlice({
       state.userName = payload.data.body.userName;
     },
     setNewUserName: (state, { payload }) => {
-      state.userName = payload.response.userName;
+      state.userName = payload.response.body.userName;
     },
   },
 });

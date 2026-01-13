@@ -39,11 +39,17 @@ const Profile = () => {
 
   useEffect(() => {
     fetchData();
-  });
+  }, []); //Avec [], fetchData() ne s’exécute qu’une seule fois, au montage du composant
 
   const handleEditUsername = () => {
     setToggleEditUsername(!toggleEditUsername);
   };
+
+  // Nom affiché : prénom + nom au début, puis username si modifié
+  const displayName = dataUser.userName
+    ? dataUser.userName
+    : `${dataUser.firstName} ${dataUser.lastName}`;
+
 
   return (
     <>
@@ -52,7 +58,7 @@ const Profile = () => {
           <h1>
             Welcome back
             <br />
-            {dataUser.firstName + " " + dataUser.lastName + " !"}
+            {displayName + " !"}
           </h1>
           <button onClick={handleEditUsername} className="edit-button">
             {!toggleEditUsername ? "Edit Name " : "Close"}

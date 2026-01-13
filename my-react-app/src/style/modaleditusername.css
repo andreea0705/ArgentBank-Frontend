@@ -13,8 +13,8 @@
 }
 
 .edit-save {
-  border-color: var(--light-green);
-  background-color: var(--light-green);
+  border-color: lightgreen;
+  background-color: lightgreen;
   color: #fff;
   font-weight: bold;
   padding: 10px;
@@ -22,8 +22,8 @@
 }
 
 .edit-save:hover {
-  border-color: var(--green);
-  background-color: var(--green);
+  border-color: green;
+  background-color: green;
 }
 
 .error-msg {
@@ -36,7 +36,7 @@
 
 .edit-save-error {
   background-color: #ce2029;
-  border-color: var(--light-green);
+  border-color: lightgreen;
   color: #fff;
   font-weight: bold;
   padding: 10px;
@@ -45,7 +45,7 @@
 
 .edit-save-error:hover {
   background-color: #ce2029;
-  border-color: var(--light-green);
+  border-color: lightgreen;
   color: #fff;
   font-weight: bold;
   padding: 10px;
@@ -66,8 +66,8 @@
 .input-grey input {
   padding: 5px;
   font-size: 1.2rem;
-  border: 1px solid var(--black);
-  background-color: var(--grey);
+  border: 1px solid black;
+  background-color: white;
 }
 
 .input-grey label {

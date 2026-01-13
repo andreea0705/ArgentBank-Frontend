@@ -63,7 +63,7 @@ const Login = () => {
           <h1>Sign In</h1>
           <form>
             <div className="input-wrapper">
-              <label htmlFor="username">Username</label>
+              <label for="username">Username</label>
               <input
                 type="email"
                 id="username"
@@ -73,7 +73,7 @@ const Login = () => {
               />
             </div>
             <div className="input-wrapper">
-              <label htmlFor="password">Password</label>
+              <label for="password">Password</label>
               <input
                 type={showPassword ? "text" : "password"}
                 id="password"
@@ -89,10 +89,10 @@ const Login = () => {
                 checked={rememberMe}
                 onChange={(e) => setRememberMe(e.target.checked)}
               />
-              <label htmlFor="remember-me">Remember me</label>
+              <label for="remember-me">Remember me</label>
             </div>
             {/*<div className="input-show-password">
-               <label htmlFor="show-password">Show Password</label>
+               <label for="show-password">Show Password</label>
               <input
                 type="checkbox"
                 id="show-password"
