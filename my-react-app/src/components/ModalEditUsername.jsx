@@ -6,6 +6,7 @@ import { setNewUserName } from "../features/profileSlice";
 const ModalEditUsername = ({ onSubmit }) => {
   const firstName = useSelector((state) => state.profile.firstName);
   const lastName = useSelector((state) => state.profile.lastName);
+  const userName = useSelector((state) => state.profile.userName);
   // console.log(username);
   const token = useSelector((state) => state.auth.token);
   const [newUsername, setNewUsername] = useState("");
@@ -16,14 +17,16 @@ const ModalEditUsername = ({ onSubmit }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    const userNameFromInput = document.getElementById("userName").value;
+
     try {
-      if (newUsername === "") {
+      if (userNameFromInput === "") {
         setErrorMsg("Le champ ne peut pas être vide");
         setButtonClass("edit-save edit-save-error");
       } else {
         setErrorMsg(""); // Efface le message d'erreur si le champ n'est pas vide
         setButtonClass("edit-save");
-
+ 
         const response = await fetch(
           "http://localhost:3001/api/v1/user/profile",
           {
@@ -33,7 +36,7 @@ const ModalEditUsername = ({ onSubmit }) => {
               "Content-Type": "application/json",
             },
             body: JSON.stringify({
-              userName: newUsername,
+              userName: userNameFromInput,
             }),
           }
         );
@@ -56,8 +59,8 @@ const ModalEditUsername = ({ onSubmit }) => {
           <label for="userName">Username</label>
           <input
             type="text"
-            value={newUsername}
-            onChange={(e) => setNewUsername(e.target.value)}
+            defaultValue={userName}
+            name="userName" id="userName"
           />
         </div>
         <div className="input-grey">
