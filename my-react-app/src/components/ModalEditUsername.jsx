@@ -56,7 +56,7 @@ const ModalEditUsername = ({ onSubmit }) => {
     <section className="editName-content">
       <form onSubmit={handleSubmit}>
         <div className="input-wrapper">
-          <label for="userName">Username</label>
+          <label htmlFor="userName">Username</label>
           <input
             type="text"
             defaultValue={userName}
@@ -64,13 +64,13 @@ const ModalEditUsername = ({ onSubmit }) => {
           />
         </div>
         <div className="input-grey">
-          <label for="firstname">First Name</label>
-          <input disabled type="text" value={firstName} />
+          <label htmlFor="firstname">First Name</label>
+          <input disabled type="text" value={firstName} id="firstname"/>
         </div>
         <div className="input-grey">
-          <label for="lastname">Last Name</label>
+          <label htmlFor="lastname">Last Name</label>
 
-          <input disabled type="text" value={lastName} />
+          <input disabled type="text" value={lastName} id="lastname"/>
         </div>
         <div className="error-msg">{errorMsg}</div>
         <button className={buttonClass} type="submit">
