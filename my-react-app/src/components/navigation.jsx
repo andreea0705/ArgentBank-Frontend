@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { setSignOut } from "../features/authSlice";
 import User from "../img/svg/user.svg";
+import SignOutIcon from "../img/signout.webp";
 
 const Navigation = () => {
   const token = useSelector((state) => state.auth.token);
@@ -33,7 +34,14 @@ const Navigation = () => {
         to={token ? "/" : "/login"}
         onClick={token ? handleLogout : undefined}
       >
-        {token ? "Sign Out" : "Sign In"}
+         {token ? (
+          <>
+            <img src={SignOutIcon} alt="Sign Out Icon" className="logout-icon" /> 
+            Sign Out
+          </>
+        ) : (
+          "Sign In"
+        )}
       </Link>
     </section>
   );
