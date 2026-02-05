@@ -164,11 +164,11 @@ body {
     height:fit-content ;
     margin: 0 auto;
     margin-top: 3rem;
-    padding: 2rem;
+    padding: 0rem 2rem 2rem 2rem;
 }
 
 .sign-in-icon {
-  font-size: 5rem;
+  font-size: 3rem;
 }
 
 .input-remember {

@@ -3,6 +3,7 @@ import "../style/main.css";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setSignIn } from "../features/authSlice";
+import UserIcon from "../components/UserIcon";
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -60,6 +61,7 @@ const Login = () => {
       <main className="main bg-dark">
         <section className="sign-in-content">
           <i className="sign-in-icon"></i>
+          <UserIcon />
           <h1>Sign In</h1>
           <form>
             <div className="input-wrapper">
