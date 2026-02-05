@@ -3,7 +3,7 @@ import "../style/navigation.css";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { setSignOut } from "../features/authSlice";
-import User from "../img/svg/user.svg";
+import UserIcon from "./UserIcon"; 
 import SignOutIcon from "../img/signout.webp";
 
 const Navigation = () => {
@@ -20,7 +20,7 @@ const Navigation = () => {
   return (
    <section className="navigation">
       {/* Image toujours visible */}
-      <img src={User} alt="User Icon" />
+      <UserIcon />
 
       {/* Lien conditionnel */}
       {token && (
